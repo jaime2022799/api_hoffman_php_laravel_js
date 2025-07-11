@@ -12,7 +12,8 @@
     <script>
         console.log("funcionando");
 
-    
+
+
         document.addEventListener("DOMContentLoaded", function(event){
 
            // var btnformulario = document.getElementById("btnformulario");
@@ -73,6 +74,33 @@
         }
 
         fetchData();
+
+
+        document.addEventListener("DOMContentLoaded", function(event){
+
+           var btnformulario = document.getElementById("btnformulario");
+
+           btnformulario.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            var requestGetAll = new XMLHttpRequest();
+
+                requestGetAll.open('POST', 'http://127.0.0.1:8000/api/sendUsers');
+
+                requestGetAll.onreadystatechange = function () {
+                if (this.readyState === 4) {
+                    console.log('Status:', this.status);
+                    console.log('Headers:', this.getAllResponseHeaders());
+                    console.log('Body:', this.responseText);
+                }
+                };
+
+                requestGetAll.send();
+
+           }
+           
+        
+        });
 
     
     

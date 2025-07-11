@@ -11,7 +11,7 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/formularioApi', function() {
 
-    
+
     [UsersController::class, 'store'];
     [UsersController::class, 'index'];
     [UsersController::class, 'show'];
@@ -34,5 +34,7 @@ Route::post('/listTableUsers', [UsersController::class, 'store']);
 Route::get('/listTableUsers', [UsersController::class, 'index']);
 
 Route::post('/sendUsers', function () {
-    return 'enviar usuario';
+
+     [UsersController::class, 'store'];
+
 });
